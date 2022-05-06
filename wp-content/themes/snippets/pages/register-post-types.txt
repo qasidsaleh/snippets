@@ -1,0 +1,54 @@
+<?php
+/**************************************************
+                Slide CPT
+**************************************************/
+function SLIDER() {
+  register_post_type( 'Gallery',
+    array(
+        'labels' => array(
+            'name' => __( 'Gallery'),
+            'singular_name' => __( 'Gallery')
+        ),
+        'public' => true,
+            'menu_icon' => 'dashicons-images-alt2',
+            'has_archive' => false,
+             'supports' => array( 'title', 'thumbnail' ),
+            'rewrite' => array('slug' => 'gallery'),
+        )
+    );
+}
+add_action( 'init', 'SLIDER' );
+
+////  Taxonomy for Custom Post Courses Type
+add_action( 'init', 'Gallery_taxonomy', 2 );
+
+
+function Gallery_taxonomy() {
+
+    $labels = array(
+        'name'              => _x( 'Gallery Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Slider Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Types' ),
+        'all_items'         => __( 'All Slider Categories' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Categories:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category' ),
+        'menu_name'         => __( 'Categories' ),
+    );
+
+    register_taxonomy( 'gallery-Category', array( 'gallery' ), array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'gallery-Category' ),
+    ) );
+}
+
+
+
+?>

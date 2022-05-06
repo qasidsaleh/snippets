@@ -1,0 +1,8 @@
+[27-May-2021 11:39:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/espisde2/public_html/snippets/wp-content/themes/snippets/pages/register-post-types.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/espisde2/public_html/snippets/wp-content/themes/snippets/pages/register-post-types.php on line 20
+[27-May-2021 11:40:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/espisde2/public_html/snippets/wp-content/themes/snippets/pages/register-post-types.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/espisde2/public_html/snippets/wp-content/themes/snippets/pages/register-post-types.php on line 20
